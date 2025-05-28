@@ -887,7 +887,7 @@
         }
 
         /* Background decoration */
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
             top: -100px;
@@ -1166,6 +1166,212 @@
         }
 
         /* =============================================================================
+           VOUCHER SECTION
+        ============================================================================= */
+        .voucher-section {
+            margin-top: var(--spacing-3xl);
+            text-align: center;
+        }
+
+        .voucher-section .section-header {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .voucher-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            justify-content: center;
+        }
+
+        @media (max-width: 1200px) {
+            .voucher-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .voucher-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+        }
+
+        .voucher-card {
+            background: var(--text-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+
+        .voucher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .voucher-image {
+            padding: var(--spacing-md);
+            background: var(--bg-light);
+        }
+
+        .voucher-design {
+            position: relative;
+            height: 220px;
+            background: var(--text-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        @media (max-width: 1200px) {
+            .voucher-design {
+                height: 230px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .voucher-design {
+                height: 240px;
+            }
+        }
+
+        .voucher-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            opacity: 0.9;
+        }
+
+        .voucher-pattern::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: var(--text-white);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .voucher-content {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
+        }
+
+        .voucher-logo {
+            font-size: 36px;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .voucher-brand {
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .voucher-amount {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .voucher-code {
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1200px) {
+            .voucher-logo {
+                font-size: 38px;
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .voucher-brand {
+                font-size: var(--font-size-base);
+                margin-bottom: var(--spacing-md);
+            }
+
+            .voucher-amount {
+                font-size: var(--font-size-2xl);
+                margin-bottom: var(--spacing-md);
+            }
+
+            .voucher-code {
+                font-size: var(--font-size-sm);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .voucher-logo {
+                font-size: 40px;
+            }
+
+            .voucher-brand {
+                font-size: var(--font-size-lg);
+            }
+
+            .voucher-amount {
+                font-size: var(--font-size-3xl);
+            }
+        }
+
+        .voucher-info {
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .voucher-info h4 {
+            font-size: var(--font-size-base);
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .voucher-value {
+            font-size: var(--font-size-sm);
+            color: var(--text-light);
+        }
+
+        @media (max-width: 1200px) {
+            .voucher-info {
+                padding: var(--spacing-lg);
+            }
+
+            .voucher-info h4 {
+                font-size: var(--font-size-lg);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .voucher-value {
+                font-size: var(--font-size-base);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .voucher-info h4 {
+                font-size: var(--font-size-xl);
+            }
+        }
+
+        /* =============================================================================
            MINIGOLD SECTION
         ============================================================================= */
         .minigold-section {
@@ -1257,14 +1463,14 @@
         }
 
         .minigold-image {
-            padding: var(--spacing-md);
+            padding: var(--spacing-lg);
             background: #f9f9f9;
             background-image: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0) 70%);
         }
 
         .minigold-design {
             position: relative;
-            height: 200px;
+            height: 240px;
             background: var(--text-white);
             border-radius: 12px;
             overflow: hidden;
@@ -1280,7 +1486,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 60px;
+            height: 80px;
             background: linear-gradient(135deg, var(--gold-dark), var(--gold-color));
             opacity: 0.9;
         }
@@ -1288,10 +1494,10 @@
         .minigold-pattern::before {
             content: '';
             position: absolute;
-            bottom: -20px;
+            bottom: -25px;
             left: 0;
             right: 0;
-            height: 40px;
+            height: 50px;
             background: var(--text-white);
             border-radius: 50% 50% 0 0;
         }
@@ -1303,7 +1509,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: var(--spacing-md);
+            padding: var(--spacing-xl) var(--spacing-lg);
         }
 
         .minigold-logo {
@@ -1343,31 +1549,32 @@
         }
 
         .minigold-code {
-            font-size: var(--font-size-xs);
+            font-size: var(--font-size-sm);
             color: var(--text-light);
             font-family: monospace;
             letter-spacing: 1px;
             background: var(--bg-light);
-            padding: 4px 8px;
+            padding: 6px 12px;
             border-radius: 12px;
             border: 1px dashed #ccc;
+            margin-bottom: var(--spacing-md);
         }
 
         .minigold-info {
-            padding: var(--spacing-md);
+            padding: var(--spacing-lg);
             text-align: center;
             border-top: 1px solid #f0f0f0;
         }
 
         .minigold-info h4 {
-            font-size: var(--font-size-base);
+            font-size: var(--font-size-lg);
             color: var(--text-dark);
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
             font-weight: 600;
         }
 
         .minigold-value {
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-base);
             font-weight: 600;
             color: var(--gold-dark);
         }
@@ -1566,6 +1773,11 @@
                 gap: var(--spacing-md);
             }
 
+            .voucher-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
             .minigold-grid {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-md);
@@ -1608,6 +1820,7 @@
 
             .services-grid,
             .gifticon-grid,
+            .voucher-grid,
             .minigold-grid {
                 grid-template-columns: 1fr;
             }
@@ -2035,6 +2248,88 @@
             <div style="text-align: center; margin-top: var(--spacing-xl);">
                 <button class="btn btn-primary">더 많은 기프티콘 보기</button>
             </div>
+            
+            <!-- Voucher Section -->
+            <section class="voucher-section fade-in">
+                <div class="section-header">
+                    <h3 class="gradient-text" style="font-size: var(--font-size-3xl);">프리미엄 상품권</h3>
+                    <p>백화점, 호텔, 온라인 쇼핑몰 상품권을 특별한 가격으로</p>
+                </div>
+                
+                <div class="voucher-grid">
+                    <article class="voucher-card fade-in">
+                        <div class="voucher-image">
+                            <div class="voucher-design">
+                                <div class="voucher-pattern"></div>
+                                <div class="voucher-content">
+                                    <div class="voucher-logo" aria-hidden="true">🏬</div>
+                                    <div class="voucher-brand">신세계백화점</div>
+                                    <div class="voucher-amount">₩100,000</div>
+                                    <div class="voucher-code">GIFT-2025-SSC</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>신세계백화점 상품권</h4>
+                            <p class="voucher-value">100,000원권</p>
+                        </div>
+                    </article>
+                    
+                    <article class="voucher-card fade-in">
+                        <div class="voucher-image">
+                            <div class="voucher-design">
+                                <div class="voucher-pattern"></div>
+                                <div class="voucher-content">
+                                    <div class="voucher-logo" aria-hidden="true">🏪</div>
+                                    <div class="voucher-brand">롯데백화점</div>
+                                    <div class="voucher-amount">₩50,000</div>
+                                    <div class="voucher-code">GIFT-2025-LTD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>롯데백화점 상품권</h4>
+                            <p class="voucher-value">50,000원권</p>
+                        </div>
+                    </article>
+                    
+                    <article class="voucher-card fade-in">
+                        <div class="voucher-image">
+                            <div class="voucher-design">
+                                <div class="voucher-pattern"></div>
+                                <div class="voucher-content">
+                                    <div class="voucher-logo" aria-hidden="true">🏛️</div>
+                                    <div class="voucher-brand">AK플라자</div>
+                                    <div class="voucher-amount">₩50,000</div>
+                                    <div class="voucher-code">GIFT-2025-AKP</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>AK플라자 상품권</h4>
+                            <p class="voucher-value">50,000원권</p>
+                        </div>
+                    </article>
+                    
+                    <article class="voucher-card fade-in">
+                        <div class="voucher-image">
+                            <div class="voucher-design">
+                                <div class="voucher-pattern"></div>
+                                <div class="voucher-content">
+                                    <div class="voucher-logo" aria-hidden="true">🛒</div>
+                                    <div class="voucher-brand">SSG.COM</div>
+                                    <div class="voucher-amount">₩30,000</div>
+                                    <div class="voucher-code">GIFT-2025-SSG</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>SSG.COM 상품권</h4>
+                            <p class="voucher-value">30,000원권</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -2351,6 +2646,26 @@
             item.addEventListener('mouseleave', function() {
                 if (logo) logo.style.filter = 'drop-shadow(0 2px 10px rgba(184, 134, 11, 0.4))';
                 if (amount) amount.style.filter = 'drop-shadow(0 2px 2px rgba(0,0,0,0.1))';
+            });
+        });
+
+        // Voucher cards click handler
+        document.querySelectorAll('.voucher-card').forEach(item => {
+            item.addEventListener('click', function() {
+                const productName = this.querySelector('h4').textContent;
+                const amount = this.querySelector('.voucher-amount').textContent;
+                alert(`${productName} ${amount}이 선택되었습니다!`);
+            });
+            
+            // Make items keyboard accessible
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            
+            item.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
             });
         });
 
